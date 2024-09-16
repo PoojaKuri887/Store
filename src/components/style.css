@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #343a40;
+  padding: 20px;
+  width: 250px;
+  position: fixed;
+  transition: transform 0.3s ease;
+  z-index: 1000; /* Ensure the sidebar is on top */
+}
+
+.sidebar.hide {
+  transform: translateX(-250px);
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.sidebar a:hover {
+  background-color: #495057;
+}
+
+.content {
+  margin-left: 260px;
+  padding: 20px;
+  width: 100%;
+  transition: margin-left 0.3s ease;
+}
+
+.content.expanded {
+  margin-left: 10px; /* Adjust margin when sidebar is hidden */
+}
+
+.btn-primary {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* Ensure the button is on top */
+}
